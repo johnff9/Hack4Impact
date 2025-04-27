@@ -1,0 +1,270 @@
+{
+  "domains": [
+    {
+      "domain": "youtube.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "AI-generated fake news videos targeting Black celebrities like Sean 'Diddy' Combs spread widely."
+        },
+        {
+          "year": 2025,
+          "type": "deepfake",
+          "description": "Deepfake of CEO Neal Mohan tricked creators into clicking malicious links in a phishing scam."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Deepfake ads promoted fraudulent products on YouTube channels."
+        },
+        {
+          "year": 2025,
+          "type": "synthetic media",
+          "description": "AI-generated video misrepresented election candidates."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Scammers used AI voice clone and YouTube footage to impersonate WPP CEO in a scam."
+        }
+      ],
+      "credibility": "medium",
+      "aiMisuse": true
+    },
+    {
+      "domain": "facebook.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "AI-generated images of Trump in Hurricane Helene floodwaters shared widely."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "Deepfake campaign impersonating Rishi Sunak promoted fraudulent AI investment."
+        },
+        {
+          "year": 2025,
+          "type": "deepfake",
+          "description": "AI-generated deepfake of Trump mocking Zelenskyy for clothing went viral on Facebook."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Deepfake video misrepresented election results on Facebook."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "AI-generated scam ads targeted users via Facebook Marketplace."
+        },
+        {
+          "year": 2025,
+          "type": "deepfake",
+          "description": "Scammers used AI deepfakes impersonating Brad Pitt to defraud a woman via Facebook."
+        }
+      ],
+      "credibility": "low",
+      "aiMisuse": true
+    },
+    {
+      "domain": "x.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "AI-generated images falsely suggested Taylor Swift endorsed Donald Trump."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "Kamala Harris depicted with communist flags at the DNC."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Nonconsensual deepfake pornography of Bobbi Althoff went viral on X, highlighting lax moderation."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Deepfake video falsely depicted a politician in a scandal."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "AI-generated article misrepresented election results."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Deepfake audio targeted a public figure in a scam."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "AI-generated explicit images of Taylor Swift circulated on X, garnering 45 million views."
+        }
+      ],
+      "credibility": "low",
+      "aiMisuse": true
+    },
+    {
+      "domain": "twitch.tv",
+      "incidents": [
+        {
+          "year": 2023,
+          "type": "deepfake",
+          "description": "Non-consensual deepfake pornography targeted female Twitch streamers, published on a subscription site."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "Cotton Sandstorm’s AI-generated content spread election misinformation via Twitch streams."
+        },
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "AI-crafted propaganda video on Twitch promoted anti-Israel narratives."
+        }
+      ],
+      "credibility": "medium",
+      "aiMisuse": true
+    },
+    {
+      "domain": "tiktok.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "AI-generated song falsely attributed to Justin Bieber, referencing Sean Combs, went viral."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "TikTok’s AI amplified election disinformation."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "instagram.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Deepfake ads promoted fraudulent products, targeting influencers."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "AI-generated influencer posts spread election misinformation."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "reddit.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Viral thread amplified AI-generated deepfake of a political figure."
+        },
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "AI-generated memes spread false narratives about celebrities."
+        },
+        {
+          "year": 2022,
+          "type": "synthetic media",
+          "description": "DALL-E 2 risks of generating disinformation discussed in Reddit threads."
+        }
+      ],
+      "credibility": "medium",
+      "aiMisuse": true
+    },
+    {
+      "domain": "twitter.com",
+      "incidents": [
+        {
+          "year": 2023,
+          "type": "synthetic media",
+          "description": "Cotton Sandstorm used AI-crafted messaging to spread Israel-Hamas propaganda."
+        },
+        {
+          "year": 2023,
+          "type": "deepfake",
+          "description": "Deepfake video targeted activists with false claims."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "cnn.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Deepfake robocall mimicking Joe Biden discouraged voting, reported by CNN."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "bbc.com",
+      "incidents": [
+        {
+          "year": 2023,
+          "type": "deepfake",
+          "description": "Deepfake videos targeted candidates in Turkey’s 2023 presidential elections."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "reuters.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "AI-generated images fueled conspiracy theories, covered by Reuters."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "nytimes.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "synthetic media",
+          "description": "AI chatbots repeated Russian disinformation, citing fake news sites, reported by The New York Times."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    },
+    {
+      "domain": "theguardian.com",
+      "incidents": [
+        {
+          "year": 2024,
+          "type": "deepfake",
+          "description": "Cotton Sandstorm’s anti-Israel deepfake during Olympics, reported by The Guardian."
+        }
+      ],
+      "credibility": "high",
+      "aiMisuse": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!-- popup/popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Misinformation Incident Tracker</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 15px;
+            margin: 0;
+            background-color: #1A1A1A; /* Dark black background */
+            color: #FFFFFF; /* White text for contrast */
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            border: 1px solid #333333; /* Subtle grey border */
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            color: #FFFFFF; /* White header */
+            text-align: center;
+            border-bottom: 1px solid #444444; /* Grey underline */
+            padding-bottom: 10px;
+        }
+        #credibility, #ai-misuse {
+            margin: 10px 0;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #2A2A2A; /* Darker grey background for sections */
+        }
+        #credibility {
+            /* Default grey for unknown */
+            color: #666666; /* Dark grey for unknown */
+        }
+        /* Credibility color variations using grey shades */
+        #credibility.high {
+            color: #CCCCCC; /* Light grey for high */
+            background-color: #3A3A3A; /* Slightly lighter grey background */
+        }
+        #credibility.medium {
+            color: #999999; /* Medium grey for medium */
+            background-color: #333333; /* Medium grey background */
+        }
+        #credibility.low {
+            color: #FFFFFF; /* White for low to stand out */
+            background-color: #222222; /* Darkest grey background */
+        }
+        h2 {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 15px 0 10px 0;
+            color: #BBBBBB; /* Light grey for subheader */
+        }
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background-color: #252525; /* Dark grey background for list items */
+            border-radius: 5px;
+            font-size: 13px;
+            color: #BBBBBB; /* Light grey text */
+            display: flex;
+            align-items: center;
+        }
+        li:before {
+            content: "•";
+            color: #666666; /* Grey bullet */
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Misinformation Incident Tracker</h1>
+<div id="credibility">Credibility: Unknown</div>
+<div id="ai-misuse">AI Misuse Detected: No</div>
+<h2>Recent Incidents</h2>
+<ul id="incidents">
+    <li>Loading...</li>
+</ul>
+<script src="popup.js"></script>
+</body>
+</html>

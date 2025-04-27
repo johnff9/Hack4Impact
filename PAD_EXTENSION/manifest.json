@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Misinformation Incident Tracker",
+  "version": "1.0",
+  "description": "Displays credibility and misinformation incidents for social media and news sites.",
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["data.json", "popup/popup.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
