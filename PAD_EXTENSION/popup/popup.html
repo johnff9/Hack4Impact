@@ -2,78 +2,142 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Misinformation Incident Tracker</title>
+    <title>PAD: Protection Against Disinformation</title>
+    <link rel="icon" type="image/png" href="/PADlogo.png">
     <style>
         body {
             width: 400px;
             padding: 15px;
             margin: 0;
-            background-color: #1A1A1A; /* Dark black background */
-            color: #FFFFFF; /* White text for contrast */
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             font-size: 14px;
-            border: 1px solid #333333; /* Subtle grey border */
-            box-sizing: border-box;
+            background: #1a1a1a;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
         h1 {
             font-size: 18px;
-            font-weight: 600;
-            margin: 0 0 15px 0;
-            color: #FFFFFF; /* White header */
-            text-align: center;
-            border-bottom: 1px solid #444444; /* Grey underline */
-            padding-bottom: 10px;
-        }
-        #credibility, #ai-misuse {
-            margin: 10px 0;
+            margin: 10px 0 15px 0;
             font-weight: 500;
-            font-size: 15px;
-            padding: 8px;
-            border-radius: 5px;
-            background-color: #2A2A2A; /* Darker grey background for sections */
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        #credibility {
-            /* Default grey for unknown */
-            color: #666666; /* Dark grey for unknown */
-        }
-        /* Credibility color variations using grey shades */
-        #credibility.high {
-            color: #CCCCCC; /* Light grey for high */
-            background-color: #3A3A3A; /* Slightly lighter grey background */
-        }
-        #credibility.medium {
-            color: #999999; /* Medium grey for medium */
-            background-color: #333333; /* Medium grey background */
-        }
-        #credibility.low {
-            color: #FFFFFF; /* White for low to stand out */
-            background-color: #222222; /* Darkest grey background */
+        h1::before {
+            content: "🛡️";
+            margin-right: 8px;
         }
         h2 {
             font-size: 16px;
+            margin: 10px 0;
+            font-weight: 400;
+            color: #d0d0d0;
+        }
+        #credibility, #ai-misuse {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
             font-weight: 500;
-            margin: 15px 0 10px 0;
-            color: #BBBBBB; /* Light grey for subheader */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+        }
+        #credibility::before {
+            content: "📊";
+            margin-right: 8px;
+            color: #a0a0a0;
+        }
+        #ai-misuse::before {
+            content: "⚠️";
+            margin-right: 8px;
+            color: #a0a0a0;
         }
         ul {
-            list-style-type: none; /* Remove default bullets */
+            list-style: none;
             padding: 0;
             margin: 0;
         }
         li {
             margin-bottom: 8px;
             padding: 8px;
-            background-color: #252525; /* Dark grey background for list items */
             border-radius: 5px;
-            font-size: 13px;
-            color: #BBBBBB; /* Light grey text */
+            background: rgba(255, 255, 255, 0.03);
             display: flex;
             align-items: center;
+            font-size: 13px;
+            transition: background 0.2s ease;
+            box-sizing: border-box;
         }
-        li:before {
-            content: "•";
-            color: #666666; /* Grey bullet */
-            margin-right: 10px;
+        li:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        li::before {
+            content: "🚨";
+            margin-right: 8px;
+            color: #a0a0a0;
+        }
+        .analyzer-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .file-input-wrapper {
+            position: relative;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 13px;
+            box-sizing: border-box;
+            outline: none;
+            cursor: pointer;
+        }
+        input[type="file"]::-webkit-file-upload-button {
+            background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        input[type="file"]::-webkit-file-upload-button:hover {
+            opacity: 0.9;
+        }
+        button {
+            padding: 8px 12px;
+            background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #deepfake-result {
+            margin-top: 8px;
+            font-weight: 500;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -85,6 +149,14 @@
 <ul id="incidents">
     <li>Loading...</li>
 </ul>
+<div class="analyzer-section">
+    <h2>Deepfake Image Analyzer</h2>
+    <div class="file-input-wrapper">
+        <input type="file" id="image-file" accept="image/jpeg,image/png">
+    </div>
+    <button id="analyze-btn">Analyze Image</button>
+    <div id="deepfake-result"></div>
+</div>
 <script src="popup.js"></script>
 </body>
 </html>

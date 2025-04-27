@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Misinformation Incident Tracker",
+  "name": "PAD: Protection Against Disinformation",
   "version": "1.0",
   "description": "Displays credibility and misinformation incidents for social media and news sites.",
   "permissions": [
@@ -8,17 +8,24 @@
     "activeTab"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "<all_urls>",
+    "https://api.sightengine.com/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_icon": "PADlogo.png"
+  },
+  "icons": {
+    "16": "PADlogo.png",
+    "48": "PADlogo.png",
+    "128": "PADlogo.png"
   },
   "web_accessible_resources": [
     {
-      "resources": ["data.json", "popup/popup.js"],
+      "resources": ["data.json", "popup/popup.js", "PADlogo.png"],
       "matches": ["<all_urls>"]
     }
   ]
