@@ -1,6 +1,5 @@
 // popup/popup.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Existing functionality: Display credibility, AI misuse, and incidents
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const url = new URL(tabs[0].url);
         const domain = url.hostname.replace(/^www\./, '');
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const incidentsElement = document.getElementById('incidents');
             if (incidents.length === 0) {
-                incidentsElement.innerHTML = '<li>No known misinformation incidents.</li>';
+                incidentsElement.innerHTML = '<li class="no-incidents">No known misinformation incidents.</li>';
             } else {
                 incidentsElement.innerHTML = incidents
                     .sort((a, b) => b.year - a.year)
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // New functionality: Deepfake image analyzer with file upload
     const analyzeBtn = document.getElementById('analyze-btn');
     const imageFileInput = document.getElementById('image-file');
     const resultElement = document.getElementById('deepfake-result');
@@ -49,9 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Validate file type and size
         const allowedTypes = ['image/jpeg', 'image/png'];
-        const maxSize = 2 * 1024 * 1024; // 2 MB (lowered to be safe)
+        const maxSize = 2 * 1024 * 1024;
         if (!allowedTypes.includes(file.type)) {
             resultElement.textContent = 'Only JPEG or PNG images are allowed.';
             return;
@@ -64,12 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
         resultElement.textContent = 'Analyzing...';
 
         try {
-            // Prepare form data for API request
             const formData = new FormData();
             formData.append('media', file);
             formData.append('models', 'deepfake');
-            formData.append('api_user', '224625548'); // Updated with provided user
-            formData.append('api_secret', '9ywobsfHtoE6YmWjwX4jB4t7YWR477WD'); // Updated with provided key
+            formData.append('api_user', '224625548');
+            formData.append('api_secret', '9ywobsfHtoE6YmWjwX4jB4t7YWR477WD');
 
             const response = await fetch('https://api.sightengine.com/1.0/check.json', {
                 method: 'POST',

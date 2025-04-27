@@ -4,6 +4,7 @@
 <head>
     <title>PAD: Protection Against Disinformation</title>
     <link rel="icon" type="image/png" href="/PADlogo.png">
+    <!-- WARNING: Do NOT add external scripts (ex Tailwind CDN) here. Chrome CSP (script-src self) blocks them -->
     <style>
         body {
             width: 400px;
@@ -26,8 +27,9 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        h1::before {
-            content: "🛡️";
+        .header-logo {
+            width: 20px;
+            height: 20px;
             margin-right: 8px;
         }
         h2 {
@@ -49,12 +51,12 @@
             box-sizing: border-box;
         }
         #credibility::before {
-            content: "📊";
+            content: "-";
             margin-right: 8px;
             color: #a0a0a0;
         }
         #ai-misuse::before {
-            content: "⚠️";
+            content: "-";
             margin-right: 8px;
             color: #a0a0a0;
         }
@@ -78,7 +80,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
         li::before {
-            content: "🚨";
+            content: "-";
             margin-right: 8px;
             color: #a0a0a0;
         }
@@ -142,7 +144,7 @@
     </style>
 </head>
 <body>
-<h1>Misinformation Incident Tracker</h1>
+<h1><img src="/PADlogo.png" alt="PAD Logo" class="header-logo">Misinformation Incident Tracker</h1>
 <div id="credibility">Credibility: Unknown</div>
 <div id="ai-misuse">AI Misuse Detected: No</div>
 <h2>Recent Incidents</h2>
